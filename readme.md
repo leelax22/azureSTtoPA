@@ -4,7 +4,6 @@ This script is a utility for retrieving and formatting the IP ranges of Microsof
 
 # Last update
 This repository contains the IPs from "ServiceTags_Public_20230508.json"
-The output was generated on 10 May 2023 at 07h51 CEST
 
 ## Description
 
