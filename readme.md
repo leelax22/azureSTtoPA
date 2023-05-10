@@ -3,7 +3,7 @@
 This script is a utility for retrieving and formatting the IP ranges of Microsoft Azure services. 
 
 # Last update
-The output was generated on 10 May 2023 at 07h28
+The output was generated on 10 May 2023 at 07h48 CEST
 The output was generated on 10 May 2023 at 13h37
 
 ## Description
