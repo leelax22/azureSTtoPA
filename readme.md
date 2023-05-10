@@ -1,6 +1,7 @@
 # Azure IP Ranges Script
 
 This script is a utility for retrieving and formatting the IP ranges of Microsoft Azure services. 
+The original JSON file is downloaded from: https://www.microsoft.com/en-us/download/details.aspx?id=56519
 
 ## Last update
 This repository contains the IPs from "ServiceTags_Public_20230508.json"
