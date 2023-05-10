@@ -79,16 +79,13 @@ if [ ! -d ".git" ]; then
   git init
 fi
 
+# Create and checkout the main branch
+git checkout -b main
 # Add all files to the Git repository
 git add .
-
 # Commit the changes
 git commit -m "Automated update"
-
 # Set the remote URL to your GitHub repository
-# Now we use the GITHUB_USERNAME and GITHUB_TOKEN variables
-git remote set-url origin https://$GITHUB_USERNAME:$GITHUB_TOKEN@github.com/$GITHUB_USERNAME/azureIPranges.git
 git remote set-url origin https://$GITHUB_USERNAME:$GITHUB_TOKEN@github.com/$GITHUB_USERNAME/$REPO_NAME
-
 # Push the changes to the GitHub repository
 git push -u origin main -f
