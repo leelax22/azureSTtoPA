@@ -22,6 +22,13 @@ json_filename=$(basename "$json_url")
 # Download the JSON file and save it to output folder with its original name
 curl -o "output/$json_filename" "$json_url"
 
+# Check if the downloaded file is a properly constructed JSON file
+jq empty "output/$json_filename" > /dev/null 2>&1
+if [ $? -ne 0 ]; then
+  echo "Downloaded file is not a valid JSON. Exiting."
+  exit 1
+fi
+
 # Make a copy of the file as ServiceTags_Public.json for processing
 cp "output/$json_filename" output/ServiceTags_Public.json
 
