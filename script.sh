@@ -8,7 +8,7 @@ export PATH=$PATH:$DIR_SCRIPT
 url="https://www.microsoft.com/en-us/download/confirmation.aspx?id=56519"
 
 # Create ranges-services-pa folder if it doesn't exist
-mkdir -p ranges-services-pa ranges-name-pa
+mkdir -p ranges-services-pa
 
 # Download the HTML of the page
 page_html=$(curl -s "$url")
