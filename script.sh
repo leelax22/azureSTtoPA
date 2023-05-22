@@ -1,6 +1,8 @@
 #!/bin/bash
+# Change the current directory to the directory of the script
+cd "$(dirname "$0")"
 # Load environment variables
-source .env
+source  $DIR_SCRIPT/.env
 # Add path of binary during script execution
 export PATH=$PATH:$DIR_SCRIPT
 
