@@ -30,7 +30,6 @@ fi
 #Delete any existing json
 rm *.json
 
-
 # Download the JSON file and save it to current directory with its original name
 curl -o "$json_filename" "$json_url"
 
@@ -79,8 +78,8 @@ for service in "${SYSTEMS[@]}"; do
 done
 
 # Update the readme.md file with the source file information
-sed -i "/^# Last update.*/a This repository contains the IPs from \"$json_filename\"" readme.md
-
+#sed -i "/^# Last update.*/a This repository contains the IPs from \"$json_filename\"" readme.md
+sed -i "/^## Last update.*/a This repository contains the IPs from \"$json_filename\"" readme.md
 # Initialize the Git repository if it doesn't exist
 if [ ! -d ".git" ]; then
   git init
