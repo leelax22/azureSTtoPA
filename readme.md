@@ -4,8 +4,8 @@ This script is a utility for retrieving and formatting the IP ranges of Microsof
 The original JSON file is downloaded from: https://www.microsoft.com/en-us/download/details.aspx?id=56519
 
 ## Last update
+
 This repository contains the IPs from "ServiceTags_Public_20230515.json"
-This repository contains the IPs from "ServiceTags_Public_20230508.json"
 
 ## Description
 
