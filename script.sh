@@ -1,3 +1,4 @@
+
 #!/bin/bash
 # Change the current directory to the directory of the script
 cd "$(dirname "$0")"
@@ -25,6 +26,10 @@ if [ -e "$json_filename" ]; then
   echo "File $json_filename already exists. Exiting."
   exit 1
 fi
+
+#Delete any existing json
+rm *.json
+
 
 # Download the JSON file and save it to current directory with its original name
 curl -o "$json_filename" "$json_url"
