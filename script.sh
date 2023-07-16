@@ -1,7 +1,4 @@
-
 #!/bin/bash
-# Change the current directory to the directory of the script
-cd "$(dirname "$0")"
 # Load environment variables
 source .env
 # Add path of binary during script execution
@@ -26,9 +23,6 @@ if [ -e "$json_filename" ]; then
   echo "File $json_filename already exists. Exiting."
   exit 1
 fi
-
-#Delete any existing json
-rm *.json
 
 # Download the JSON file and save it to current directory with its original name
 curl -o "$json_filename" "$json_url"
@@ -78,19 +72,23 @@ for service in "${SYSTEMS[@]}"; do
 done
 
 # Update the readme.md file with the source file information
-sed -i '/This repository contains the IPs from/c\This repository contains the IPs from '\"$json_filename\" readme.md
+sed -i "/^# Last update.*/a This repository contains the IPs from \"$json_filename\"" readme.md
+
 # Initialize the Git repository if it doesn't exist
 if [ ! -d ".git" ]; then
   git init
 fi
 
-# Create and checkout the main branch
-git checkout -b main
 # Add all files to the Git repository
 git add .
+
 # Commit the changes
 git commit -m "Automated update"
+
 # Set the remote URL to your GitHub repository
+# Now we use the GITHUB_USERNAME and GITHUB_TOKEN variables
+git remote set-url origin https://$GITHUB_USERNAME:$GITHUB_TOKEN@github.com/$GITHUB_USERNAME/azureIPranges.git
 git remote set-url origin https://$GITHUB_USERNAME:$GITHUB_TOKEN@github.com/$GITHUB_USERNAME/$REPO_NAME
+
 # Push the changes to the GitHub repository
 git push -u origin main -f
