@@ -72,7 +72,7 @@ for service in "${SYSTEMS[@]}"; do
 done
 
 # Update the readme.md file with the source file information
-sed -i "/^# Last update.*/a This repository contains the IPs from \"$json_filename\"" readme.md
+sed -i "s/This repository contains the IPs from \"ServiceTags_Public_[0-9]*\.json\"/This repository contains the IPs from \"$json_filename\"/g" readme.md
 
 # Initialize the Git repository if it doesn't exist
 if [ ! -d ".git" ]; then
