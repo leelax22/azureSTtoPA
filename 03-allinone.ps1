@@ -148,6 +148,7 @@ for ($i=0; $i -lt $ServiceTagList.Count; $i++){
 curl -X GET -H "X-PAN-KEY: ${X-PAN-KEY}" -k  "${PaloRESTAPI_address_baseurl}?${PaloLocationParamter}" > Palo_AddressList.json
 
 
+
 # 서비스 태그 리스트에서 조회하고 없으면 태그 생성
 curl -X GET -H "X-PAN-KEY: ${X-PAN-KEY}" -k  "${PaloRESTAPI_tag_baseurl}?${PaloLocationParamter}" > Palo_TagList.json
 $exist_Palo_Tag_List = jq -r '.result.entry[]."@name"' Palo_TagList.json
@@ -441,8 +442,16 @@ try {
 }
 catch {
     $message = "Error: $_"
-        log -Severity Error -Message $message -terminateOnError
+    log -Severity Error -Message $message -terminateOnError
 }
 
-# $giturl = "https://$($env:GITHUB_USERNAME):$($env:GITHUB_TOKEN)@github.com/$($env:GITHUB_USERNAME)/$($env:REPO_NAME)"
+try {
+    curl -X POST -H "X-PAN-KEY: ${X-PAN-KEY}" -k "https://lcmpalopayg.koreacentral.cloudapp.azure.com/api?type=commit&cmd=<commit></commit>"
+    log -Message "방화벽 Commit가 완료되었습니다."
+}
+catch {
+    log -Message "방화벽 Commit에 실패했습니다."
+    $message = "Error: $_"
+    log -Severity Error -Message $message -terminateOnError
+}
 
