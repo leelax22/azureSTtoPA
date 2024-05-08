@@ -680,3 +680,63 @@
 2024-05-08T16:46:36+09 [Information] - ------------------------------------------------------------------
 2024-05-08T16:46:36+09 [Information] - 3달 이상 지난 Service Tag 파일과 폴더 삭제를 시작합니다. 
 2024-05-08T16:46:36+09 [Information] - Github 저장와 동기화를 시작합니다.
+2024-05-08T16:48:17+09 [Information] - ------------------------------------------------------------------
+2024-05-08T16:48:17+09 [Information] - ------------------------------------------------------------------
+2024-05-08T16:48:17+09 [Information] - 　　　　　　　　　New Sync Job Started......　　　　　　　　　　　　　　　
+2024-05-08T16:48:17+09 [Information] - ------------------------------------------------------------------
+2024-05-08T16:48:17+09 [Information] - ------------------------------------------------------------------
+2024-05-08T16:48:18+09 [Information] - 해당 날짜의 Service Tag JSON파일 [ServiceTags_Public_20240506.json]이 이미 존재합니다. 다운로드하지 않습니다.
+2024-05-08T16:48:18+09 [Information] - Storage.KoreaCentral IPs를 텍스트 파일에 저장합니다.
+2024-05-08T16:48:18+09 [Information] - HDInsight.KoreaCentral IPs를 텍스트 파일에 저장합니다.
+2024-05-08T16:48:18+09 [Information] - AzureContainerRegistry.KoreaSouth IPs를 텍스트 파일에 저장합니다.
+2024-05-08T16:48:18+09 [Information] - MicrosoftContainerRegistry.EastUS IPs를 텍스트 파일에 저장합니다.
+2024-05-08T16:48:19+09 [Information] - 방화벽에 태그 [Storage.KoreaCentral] 가 등록되어 있습니다.
+2024-05-08T16:48:19+09 [Information] - 방화벽에 태그 [HDInsight.KoreaCentral] 가 등록되어 있습니다.
+2024-05-08T16:48:19+09 [Information] - 방화벽에 태그 [AzureContainerRegistry.KoreaSouth] 가 등록되어 있습니다.
+2024-05-08T16:48:19+09 [Information] - 방화벽에 태그 [MicrosoftContainerRegistry.EastUS] 가 등록되어 있습니다.
+2024-05-08T16:48:19+09 [Information] - 방화벽에 Service Tag [Storage.KoreaCentral]에 대한 동기화 작업을 시작합니다.
+2024-05-08T16:48:19+09 [Information] - 해당 Service Tag로 방화벽에 등록된 IP 개수는 [16]개 입니다.
+2024-05-08T16:48:19+09 [Information] - 해당 Service Tag로 Azure에서 지정된 IP 개수는 [16]개 입니다.
+2024-05-08T16:48:19+09 [Information] - 방화벽에 등록된 IP 개수와 Azure에서 지정된 IP 개수가 일치합니다.
+2024-05-08T16:48:19+09 [Information] - 기존 Service Tag의 ChangeNum과 새로 업데이트된 Azure Service Tag의 ChangeNum을 비교합니다.
+2024-05-08T16:48:19+09 [Information] - 기존 Service Tag의 ChangeNum = [10].
+2024-05-08T16:48:19+09 [Information] - 업데이트된 Azure Service Tag의 ChangeNum = [10].
+2024-05-08T16:48:19+09 [Information] - ChangeNum이 동일하므로 업데이트할 내역이 없습니다.
+2024-05-08T16:48:19+09 [Information] - ------------------------------------------------------------------
+2024-05-08T16:48:19+09 [Information] - 방화벽에 Service Tag [HDInsight.KoreaCentral]에 대한 동기화 작업을 시작합니다.
+2024-05-08T16:48:19+09 [Information] - 해당 Service Tag로 방화벽에 등록된 IP 개수는 [4]개 입니다.
+2024-05-08T16:48:19+09 [Information] - 해당 Service Tag로 Azure에서 지정된 IP 개수는 [4]개 입니다.
+2024-05-08T16:48:19+09 [Information] - 방화벽에 등록된 IP 개수와 Azure에서 지정된 IP 개수가 일치합니다.
+2024-05-08T16:48:19+09 [Information] - 기존 Service Tag의 ChangeNum과 새로 업데이트된 Azure Service Tag의 ChangeNum을 비교합니다.
+2024-05-08T16:48:19+09 [Information] - 기존 Service Tag의 ChangeNum = [4].
+2024-05-08T16:48:19+09 [Information] - 업데이트된 Azure Service Tag의 ChangeNum = [4].
+2024-05-08T16:48:19+09 [Information] - ChangeNum이 동일하므로 업데이트할 내역이 없습니다.
+2024-05-08T16:48:19+09 [Information] - ------------------------------------------------------------------
+2024-05-08T16:48:19+09 [Information] - 방화벽에 Service Tag [AzureContainerRegistry.KoreaSouth]에 대한 동기화 작업을 시작합니다.
+2024-05-08T16:48:19+09 [Information] - 해당 Service Tag로 방화벽에 등록된 IP 개수는 [5]개 입니다.
+2024-05-08T16:48:19+09 [Information] - 해당 Service Tag로 Azure에서 지정된 IP 개수는 [5]개 입니다.
+2024-05-08T16:48:19+09 [Information] - 방화벽에 등록된 IP 개수와 Azure에서 지정된 IP 개수가 일치합니다.
+2024-05-08T16:48:19+09 [Information] - 기존 Service Tag의 ChangeNum과 새로 업데이트된 Azure Service Tag의 ChangeNum을 비교합니다.
+2024-05-08T16:48:19+09 [Information] - 기존 Service Tag의 ChangeNum = [8].
+2024-05-08T16:48:19+09 [Information] - 업데이트된 Azure Service Tag의 ChangeNum = [8].
+2024-05-08T16:48:19+09 [Information] - ChangeNum이 동일하므로 업데이트할 내역이 없습니다.
+2024-05-08T16:48:19+09 [Information] - ------------------------------------------------------------------
+2024-05-08T16:48:19+09 [Information] - 방화벽에 Service Tag [MicrosoftContainerRegistry.EastUS]에 대한 동기화 작업을 시작합니다.
+2024-05-08T16:48:20+09 [Information] - 해당 Service Tag로 방화벽에 등록된 IP 개수는 [3]개 입니다.
+2024-05-08T16:48:20+09 [Information] - 해당 Service Tag로 Azure에서 지정된 IP 개수는 [3]개 입니다.
+2024-05-08T16:48:20+09 [Information] - 방화벽에 등록된 IP 개수와 Azure에서 지정된 IP 개수가 일치합니다.
+2024-05-08T16:48:20+09 [Information] - 기존 Service Tag의 ChangeNum과 새로 업데이트된 Azure Service Tag의 ChangeNum을 비교합니다.
+2024-05-08T16:48:20+09 [Information] - 기존 Service Tag의 ChangeNum = [2].
+2024-05-08T16:48:20+09 [Information] - 업데이트된 Azure Service Tag의 ChangeNum = [2].
+2024-05-08T16:48:20+09 [Information] - ChangeNum이 동일하므로 업데이트할 내역이 없습니다.
+2024-05-08T16:48:20+09 [Information] - ------------------------------------------------------------------
+2024-05-08T16:48:20+09 [Information] - Service Tag의 ChangeNum을 [ServiceTags_changeNum.json]에 저장합니다. 
+2024-05-08T16:48:20+09 [Information] - Service Tag [Storage.KoreaCentral]의 마지막 ChangeNum은 [10]입니다. 파일에 기록합니다.
+2024-05-08T16:48:20+09 [Information] - Service Tag [HDInsight.KoreaCentral]의 마지막 ChangeNum은 [4]입니다. 파일에 기록합니다.
+2024-05-08T16:48:20+09 [Information] - Service Tag [AzureContainerRegistry.KoreaSouth]의 마지막 ChangeNum은 [8]입니다. 파일에 기록합니다.
+2024-05-08T16:48:20+09 [Information] - Service Tag [MicrosoftContainerRegistry.EastUS]의 마지막 ChangeNum은 [2]입니다. 파일에 기록합니다.
+2024-05-08T16:48:20+09 [Information] - Service Tag의 ChangeNum 업데이트 작업이 끝났습니다.
+2024-05-08T16:48:20+09 [Information] - Service Tag의 Sync 작업이 종료되었습니다.
+2024-05-08T16:48:20+09 [Information] - ------------------------------------------------------------------
+2024-05-08T16:48:20+09 [Information] - 3달 이상 지난 Service Tag 파일과 폴더 삭제를 시작합니다. 
+2024-05-08T16:48:20+09 [Information] - Github 저장와 동기화를 시작합니다.

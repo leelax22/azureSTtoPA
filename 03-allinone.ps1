@@ -435,7 +435,14 @@ git commit -m "Automated update - $($currentdate.ToString("yyyyMMddHHmm"))"
 
 $gitURL = "https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_USERNAME}/${REPO_NAME}"
 git remote set-url origin $gitURL
-
+try {
+    git push -u origin main -f
+    log -Message "git 동기화가 완료되었습니다."
+}
+catch {
+    $message = "Error: $_"
+        log -Severity Error -Message $message -terminateOnError
+}
 
 # $giturl = "https://$($env:GITHUB_USERNAME):$($env:GITHUB_TOKEN)@github.com/$($env:GITHUB_USERNAME)/$($env:REPO_NAME)"
 
