@@ -441,17 +441,17 @@ try {
     log -Message "git 동기화가 완료되었습니다."
 }
 catch {
-    $message = "Error: $_"
-    log -Severity Error -Message $message -terminateOnError
+    $message_error_git = "Error: $_"
+    log -Severity Error -Message $message_error_git -terminateOnError
 }
 
 try {
-    curl -X POST -H "X-PAN-KEY: ${X-PAN-KEY}" -k "https://lcmpalopayg.koreacentral.cloudapp.azure.com/api?type=commit&cmd=<commit></commit>"
+    $commit = (curl -X POST -H "X-PAN-KEY: ${X-PAN-KEY}" -k "https://lcmpalopayg.koreacentral.cloudapp.azure.com/api?type=commit&cmd=<commit></commit>")
     log -Message "방화벽 Commit가 완료되었습니다."
 }
 catch {
     log -Message "방화벽 Commit에 실패했습니다."
-    $message = "Error: $_"
-    log -Severity Error -Message $message -terminateOnError
+    $message_error_commit = "Error: $_"
+    log -Severity Error -Message $message_error_commit -terminateOnError
 }
 
