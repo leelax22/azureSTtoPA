@@ -1,0 +1,18 @@
+[
+  {
+    "ChangeNum": "10",
+    "ServiceTagName": "Storage.KoreaCentral"
+  },
+  {
+    "ChangeNum": "4",
+    "ServiceTagName": "HDInsight.KoreaCentral"
+  },
+  {
+    "ChangeNum": "8",
+    "ServiceTagName": "AzureContainerRegistry.KoreaSouth"
+  },
+  {
+    "ChangeNum": "2",
+    "ServiceTagName": "MicrosoftContainerRegistry.EastUS"
+  }
+]
