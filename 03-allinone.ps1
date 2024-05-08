@@ -64,28 +64,17 @@ function log {
     }
 }
 
-#--------필요 변수 지정 -----------------------------------------------------#
-# 작업할 Service Tag 이름 등록
-$ServiceTagList = @(
-    "Storage.KoreaCentral"
-    "HDInsight.KoreaCentral"
-    "AzureContainerRegistry.KoreaSouth"
-    "MicrosoftContainerRegistry.EastUS"
-)
+#--------필요 변수 Import -----------------------------------------------------#
+## env.json에서 Import
+$envJsonString = Get-Content -Raw -Path "env.json"
+$envJsonObject = $envJsonString | ConvertFrom-Json
 
-# 파일 경로 설정
-$envFilePath = "env.txt"
-
-# 파일 내용을 읽고 각 줄을 처리하여 환경 변수로 설정
-Get-Content $envFilePath | ForEach-Object {
-    $envVarName, $envVarValue = $_ -split "=", 2
-    $envVarName = $envVarName.Trim()
-    $envVarValue = $envVarValue.Trim()
-    Set-Item -Path "env:$envVarName" -Value $envVarValue
-}
-
-${X-PAN-KEY} = ${env:X-PAN-KEY}
-${PALO_URL} = ${env:PALO_URL}
+${X-PAN-KEY} = $envJsonObject."X-PAN-KEY"
+${PALO_URL} = $envJsonObject."PALO_URL"
+$ServiceTagList = $envJsonObject."ServiceTagList"
+$GITHUB_USERNAME = $envJsonObject."GITHUB_USERNAME"
+$GITHUB_TOKEN = $envJsonObject."GITHUB_TOKEN"
+$REPO_NAME = $envJsonObject."REPO_NAME"
 
 $header = @{
     "X-PAN-KEY"= "${X-PAN-KEY}"
@@ -141,14 +130,10 @@ New-Item -ItemType Directory -Path $json_update_date -ErrorAction SilentlyContin
 
 # json에서 필요한 Service Tag의 IP들만 파일로 출력
 for ($i=0; $i -lt $ServiceTagList.Count; $i++){
-
     log -Message "$($ServiceTagList[$i]) IPs를 텍스트 파일에 저장합니다."
-
     $ipList = (jq -r --arg servicetag "$($ServiceTagList[$i])" '.values[]|select(.name == $servicetag)|.properties.addressPrefixes[]?' ServiceTags_Public.json)
-
     Remove-Item -Path "$json_update_date/$($ServiceTagList[$i]).txt" -ErrorAction SilentlyContinue
     New-Item -ItemType File -Path "$json_update_date/$($ServiceTagList[$i]).txt" -ErrorAction SilentlyContinue
-
     foreach ($ip in $ipList){
         if ($ip -notmatch ":+") { #IPv6은 일단 생략
             Add-Content -Path "./$json_update_date/$($ServiceTagList[$i]).txt" -Value $ip
@@ -353,7 +338,7 @@ for ($r=0; $r -lt $ServiceTagList.Count; $r++){
         
         # Azure에서 제공하는 Service Tag의 changeNumber를 확인하고 방화벽에 등록된 changeNumber 동일하다면 업데이트하지 않도록 구성
         $newest_ChangeNum = (jq -r --arg servicetag $serviceTagName '.values[]|select(.name == $servicetag)|.properties.changeNumber' ServiceTags_Public.json)
-        $changeNumFileName = "ServiceTag_changeNum.json"
+        $changeNumFileName = "ServiceTags_changeNum.json"
         $changeNumJson = Get-Content -Path $changeNumFileName -Raw
         $changeNumList = $changeNumJson | ConvertFrom-Json
         $exist_ChangeNum = ($changeNumList | where-object{$_.ServiceTagName -eq $serviceTagName}).ChangeNum
@@ -440,4 +425,17 @@ foreach ($file in $files) {
 }
 
 log -Message "Github 저장와 동기화를 시작합니다."
+
+
+if (!(Test-Path -Path ".git" -PathType Container)) {
+    git init
+}
+git add .
+git commit -m "Automated update - $($currentdate.ToString("yyyyMMddHHmm"))"
+
+$gitURL = "https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_USERNAME}/${REPO_NAME}"
+git remote set-url origin $gitURL
+
+
+# $giturl = "https://$($env:GITHUB_USERNAME):$($env:GITHUB_TOKEN)@github.com/$($env:GITHUB_USERNAME)/$($env:REPO_NAME)"
 
