@@ -332,3 +332,111 @@
 2024-05-09T09:20:02+09 [Information] - /home/leelax/script/azureIPranges-lcm/20240506 의 날짜는 3달 안이므로 유지합니다.
 2024-05-09T09:20:02+09 [Information] - /home/leelax/script/azureIPranges-lcm/ServiceTags_Public_20240506.json 의 날짜는 3달 안이므로 유지합니다.
 2024-05-09T09:20:02+09 [Information] - Github 저장와 동기화를 시작합니다.
+2024-05-09T09:20:04+09 [Information] - git 동기화가 완료되었습니다.
+2024-05-09T09:20:05+09 [Information] - 방화벽 Commit가 완료되었습니다.
+2024-05-09T09:21:12+09 [Information] - ------------------------------------------------------------------
+2024-05-09T09:21:12+09 [Information] - ------------------------------------------------------------------
+2024-05-09T09:21:12+09 [Information] - 　　　　　　　　　New Sync Job Started......　　　　　　　　　　　　　　　
+2024-05-09T09:21:12+09 [Information] - ------------------------------------------------------------------
+2024-05-09T09:21:12+09 [Information] - ------------------------------------------------------------------
+2024-05-09T09:21:13+09 [Information] - 해당 날짜의 Service Tag JSON파일 [ServiceTags_Public_20240506.json]이 이미 존재합니다. 다운로드하지 않습니다.
+2024-05-09T09:21:13+09 [Information] - Storage.KoreaCentral IPs를 텍스트 파일에 저장합니다.
+2024-05-09T09:21:13+09 [Information] - HDInsight.KoreaCentral IPs를 텍스트 파일에 저장합니다.
+2024-05-09T09:21:13+09 [Information] - AzureContainerRegistry.KoreaSouth IPs를 텍스트 파일에 저장합니다.
+2024-05-09T09:21:13+09 [Information] - MicrosoftContainerRegistry.EastUS IPs를 텍스트 파일에 저장합니다.
+2024-05-09T09:21:15+09 [Information] - 방화벽에 Address Group [Storage.KoreaCentral] 이 등록되어 있습니다.
+2024-05-09T09:21:15+09 [Information] - 방화벽에 Address Group [HDInsight.KoreaCentral] 이 등록되어 있습니다.
+2024-05-09T09:21:15+09 [Information] - 방화벽에 Address Group [AzureContainerRegistry.KoreaSouth] 이 등록되어 있습니다.
+2024-05-09T09:21:15+09 [Information] - 방화벽에 Address Group [MicrosoftContainerRegistry.EastUS] 이 등록되어 있습니다.
+2024-05-09T09:21:15+09 [Information] - 방화벽에 태그 [Storage.KoreaCentral] 가 등록되어 있습니다.
+2024-05-09T09:21:15+09 [Information] - 방화벽에 태그 [HDInsight.KoreaCentral] 가 등록되어 있습니다.
+2024-05-09T09:21:15+09 [Information] - 방화벽에 태그 [AzureContainerRegistry.KoreaSouth] 가 등록되어 있습니다.
+2024-05-09T09:21:15+09 [Information] - 방화벽에 태그 [MicrosoftContainerRegistry.EastUS] 가 등록되어 있습니다.
+2024-05-09T09:21:15+09 [Information] - 방화벽에 Service Tag [Storage.KoreaCentral]에 대한 동기화 작업을 시작합니다.
+2024-05-09T09:21:15+09 [Information] - 해당 Service Tag로 방화벽에 등록된 IP 개수는 [16]개 입니다.
+2024-05-09T09:21:15+09 [Information] - 해당 Service Tag로 Azure에서 지정된 IP 개수는 [0]개 입니다.
+2024-05-09T09:21:15+09 [Information] - Azure에서 지정된 IP 개수가 방화벽에 등록된 IP보다 [16]개 적으므로, 해당 개수만큼 Address를 삭제합니다.
+2024-05-09T09:21:15+09 [Information] - 삭제될 Address Name은 [Storage.KoreaCentral001]입니다.
+2024-05-09T09:21:15+09 [Information] - 삭제될 Address Name은 [Storage.KoreaCentral002]입니다.
+2024-05-09T09:21:15+09 [Information] - 삭제될 Address Name은 [Storage.KoreaCentral003]입니다.
+2024-05-09T09:21:15+09 [Information] - 삭제될 Address Name은 [Storage.KoreaCentral004]입니다.
+2024-05-09T09:21:15+09 [Information] - 삭제될 Address Name은 [Storage.KoreaCentral005]입니다.
+2024-05-09T09:21:15+09 [Information] - 삭제될 Address Name은 [Storage.KoreaCentral006]입니다.
+2024-05-09T09:21:15+09 [Information] - 삭제될 Address Name은 [Storage.KoreaCentral007]입니다.
+2024-05-09T09:21:15+09 [Information] - 삭제될 Address Name은 [Storage.KoreaCentral008]입니다.
+2024-05-09T09:21:15+09 [Information] - 삭제될 Address Name은 [Storage.KoreaCentral009]입니다.
+2024-05-09T09:21:15+09 [Information] - 삭제될 Address Name은 [Storage.KoreaCentral010]입니다.
+2024-05-09T09:21:15+09 [Information] - 삭제될 Address Name은 [Storage.KoreaCentral011]입니다.
+2024-05-09T09:21:15+09 [Information] - 삭제될 Address Name은 [Storage.KoreaCentral012]입니다.
+2024-05-09T09:21:15+09 [Information] - 삭제될 Address Name은 [Storage.KoreaCentral013]입니다.
+2024-05-09T09:21:15+09 [Information] - 삭제될 Address Name은 [Storage.KoreaCentral014]입니다.
+2024-05-09T09:21:15+09 [Information] - 삭제될 Address Name은 [Storage.KoreaCentral015]입니다.
+2024-05-09T09:21:15+09 [Information] - 삭제될 Address Name은 [Storage.KoreaCentral016]입니다.
+2024-05-09T09:21:16+09 [Information] - Address Name [Storage.KoreaCentral001]을 삭제하였습니다.
+2024-05-09T09:21:16+09 [Information] - Address Name [Storage.KoreaCentral002]을 삭제하였습니다.
+2024-05-09T09:21:17+09 [Information] - Address Name [Storage.KoreaCentral003]을 삭제하였습니다.
+2024-05-09T09:21:17+09 [Information] - Address Name [Storage.KoreaCentral004]을 삭제하였습니다.
+2024-05-09T09:21:18+09 [Information] - Address Name [Storage.KoreaCentral005]을 삭제하였습니다.
+2024-05-09T09:21:18+09 [Information] - Address Name [Storage.KoreaCentral006]을 삭제하였습니다.
+2024-05-09T09:21:18+09 [Information] - Address Name [Storage.KoreaCentral007]을 삭제하였습니다.
+2024-05-09T09:21:19+09 [Information] - Address Name [Storage.KoreaCentral008]을 삭제하였습니다.
+2024-05-09T09:21:19+09 [Information] - Address Name [Storage.KoreaCentral009]을 삭제하였습니다.
+2024-05-09T09:21:19+09 [Information] - Address Name [Storage.KoreaCentral010]을 삭제하였습니다.
+2024-05-09T09:21:20+09 [Information] - Address Name [Storage.KoreaCentral011]을 삭제하였습니다.
+2024-05-09T09:21:20+09 [Information] - Address Name [Storage.KoreaCentral012]을 삭제하였습니다.
+2024-05-09T09:21:21+09 [Information] - Address Name [Storage.KoreaCentral013]을 삭제하였습니다.
+2024-05-09T09:21:21+09 [Information] - Address Name [Storage.KoreaCentral014]을 삭제하였습니다.
+2024-05-09T09:21:21+09 [Information] - Address Name [Storage.KoreaCentral015]을 삭제하였습니다.
+2024-05-09T09:21:22+09 [Information] - Address Name [Storage.KoreaCentral016]을 삭제하였습니다.
+2024-05-09T09:21:22+09 [Information] - ------------------------------------------------------------------
+2024-05-09T09:21:22+09 [Information] - 방화벽에 Service Tag [HDInsight.KoreaCentral]에 대한 동기화 작업을 시작합니다.
+2024-05-09T09:21:22+09 [Information] - 해당 Service Tag로 방화벽에 등록된 IP 개수는 [4]개 입니다.
+2024-05-09T09:21:22+09 [Information] - 해당 Service Tag로 Azure에서 지정된 IP 개수는 [0]개 입니다.
+2024-05-09T09:21:22+09 [Information] - Azure에서 지정된 IP 개수가 방화벽에 등록된 IP보다 [4]개 적으므로, 해당 개수만큼 Address를 삭제합니다.
+2024-05-09T09:21:22+09 [Information] - 삭제될 Address Name은 [HDInsight.KoreaCentral001]입니다.
+2024-05-09T09:21:22+09 [Information] - 삭제될 Address Name은 [HDInsight.KoreaCentral002]입니다.
+2024-05-09T09:21:22+09 [Information] - 삭제될 Address Name은 [HDInsight.KoreaCentral003]입니다.
+2024-05-09T09:21:22+09 [Information] - 삭제될 Address Name은 [HDInsight.KoreaCentral004]입니다.
+2024-05-09T09:21:22+09 [Information] - Address Name [HDInsight.KoreaCentral001]을 삭제하였습니다.
+2024-05-09T09:21:22+09 [Information] - Address Name [HDInsight.KoreaCentral002]을 삭제하였습니다.
+2024-05-09T09:21:23+09 [Information] - Address Name [HDInsight.KoreaCentral003]을 삭제하였습니다.
+2024-05-09T09:21:23+09 [Information] - Address Name [HDInsight.KoreaCentral004]을 삭제하였습니다.
+2024-05-09T09:21:23+09 [Information] - ------------------------------------------------------------------
+2024-05-09T09:21:23+09 [Information] - 방화벽에 Service Tag [AzureContainerRegistry.KoreaSouth]에 대한 동기화 작업을 시작합니다.
+2024-05-09T09:21:23+09 [Information] - 해당 Service Tag로 방화벽에 등록된 IP 개수는 [5]개 입니다.
+2024-05-09T09:21:23+09 [Information] - 해당 Service Tag로 Azure에서 지정된 IP 개수는 [0]개 입니다.
+2024-05-09T09:21:23+09 [Information] - Azure에서 지정된 IP 개수가 방화벽에 등록된 IP보다 [5]개 적으므로, 해당 개수만큼 Address를 삭제합니다.
+2024-05-09T09:21:23+09 [Information] - 삭제될 Address Name은 [AzureContainerRegistry.KoreaSouth001]입니다.
+2024-05-09T09:21:23+09 [Information] - 삭제될 Address Name은 [AzureContainerRegistry.KoreaSouth002]입니다.
+2024-05-09T09:21:23+09 [Information] - 삭제될 Address Name은 [AzureContainerRegistry.KoreaSouth003]입니다.
+2024-05-09T09:21:23+09 [Information] - 삭제될 Address Name은 [AzureContainerRegistry.KoreaSouth004]입니다.
+2024-05-09T09:21:23+09 [Information] - 삭제될 Address Name은 [AzureContainerRegistry.KoreaSouth005]입니다.
+2024-05-09T09:21:23+09 [Information] - Address Name [AzureContainerRegistry.KoreaSouth001]을 삭제하였습니다.
+2024-05-09T09:21:24+09 [Information] - Address Name [AzureContainerRegistry.KoreaSouth002]을 삭제하였습니다.
+2024-05-09T09:21:24+09 [Information] - Address Name [AzureContainerRegistry.KoreaSouth003]을 삭제하였습니다.
+2024-05-09T09:21:25+09 [Information] - Address Name [AzureContainerRegistry.KoreaSouth004]을 삭제하였습니다.
+2024-05-09T09:21:25+09 [Information] - Address Name [AzureContainerRegistry.KoreaSouth005]을 삭제하였습니다.
+2024-05-09T09:21:25+09 [Information] - ------------------------------------------------------------------
+2024-05-09T09:21:25+09 [Information] - 방화벽에 Service Tag [MicrosoftContainerRegistry.EastUS]에 대한 동기화 작업을 시작합니다.
+2024-05-09T09:21:25+09 [Information] - 해당 Service Tag로 방화벽에 등록된 IP 개수는 [3]개 입니다.
+2024-05-09T09:21:25+09 [Information] - 해당 Service Tag로 Azure에서 지정된 IP 개수는 [0]개 입니다.
+2024-05-09T09:21:25+09 [Information] - Azure에서 지정된 IP 개수가 방화벽에 등록된 IP보다 [3]개 적으므로, 해당 개수만큼 Address를 삭제합니다.
+2024-05-09T09:21:25+09 [Information] - 삭제될 Address Name은 [MicrosoftContainerRegistry.EastUS001]입니다.
+2024-05-09T09:21:25+09 [Information] - 삭제될 Address Name은 [MicrosoftContainerRegistry.EastUS002]입니다.
+2024-05-09T09:21:25+09 [Information] - 삭제될 Address Name은 [MicrosoftContainerRegistry.EastUS003]입니다.
+2024-05-09T09:21:25+09 [Information] - Address Name [MicrosoftContainerRegistry.EastUS001]을 삭제하였습니다.
+2024-05-09T09:21:26+09 [Information] - Address Name [MicrosoftContainerRegistry.EastUS002]을 삭제하였습니다.
+2024-05-09T09:21:26+09 [Information] - Address Name [MicrosoftContainerRegistry.EastUS003]을 삭제하였습니다.
+2024-05-09T09:21:26+09 [Information] - ------------------------------------------------------------------
+2024-05-09T09:21:26+09 [Information] - Service Tag의 ChangeNum을 []에 저장합니다. 
+2024-05-09T09:21:26+09 [Information] - Service Tag [Storage.KoreaCentral]의 마지막 ChangeNum은 []입니다. 파일에 기록합니다.
+2024-05-09T09:21:26+09 [Information] - Service Tag [HDInsight.KoreaCentral]의 마지막 ChangeNum은 []입니다. 파일에 기록합니다.
+2024-05-09T09:21:26+09 [Information] - Service Tag [AzureContainerRegistry.KoreaSouth]의 마지막 ChangeNum은 []입니다. 파일에 기록합니다.
+2024-05-09T09:21:26+09 [Information] - Service Tag [MicrosoftContainerRegistry.EastUS]의 마지막 ChangeNum은 []입니다. 파일에 기록합니다.
+2024-05-09T09:21:26+09 [Information] - Service Tag의 ChangeNum 업데이트 작업이 끝났습니다.
+2024-05-09T09:21:26+09 [Information] - Service Tag의 Sync 작업이 종료되었습니다.
+2024-05-09T09:21:26+09 [Information] - ------------------------------------------------------------------
+2024-05-09T09:21:26+09 [Information] - 3달 이상 지난 Service Tag 파일과 폴더 삭제를 시작합니다. 
+2024-05-09T09:21:26+09 [Information] - /home/leelax/script/azureIPranges-lcm/20240506 의 날짜는 3달 안이므로 유지합니다.
+2024-05-09T09:21:26+09 [Information] - /home/leelax/script/azureIPranges-lcm/ServiceTags_Public_20240506.json 의 날짜는 3달 안이므로 유지합니다.
+2024-05-09T09:21:26+09 [Information] - Github 저장와 동기화를 시작합니다.
