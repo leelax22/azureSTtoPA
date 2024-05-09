@@ -18,7 +18,7 @@ function log {
     )
 
     $timestamp = Get-Date -Format 'yyyy-MM-ddTHH:mm:sszz'
-    Add-Content -Path ("./SyncServiceTagIP.log") -Value ($timestamp + " " + "[$Severity] - " + $Message) -Force
+    Add-Content -Path ("./sync.log") -Value ($timestamp + " " + "[$Severity] - " + $Message) -Force
     $outputMessage = "{0} [{1}]:{2}" -f $timestamp, $Severity,($Message -replace '\s\s+?','')
     If ($global:FollowLog) {
         switch ($severity) {
@@ -375,7 +375,26 @@ for ($r=0; $r -lt $ServiceTagList.Count; $r++){
         $changeNumList = $changeNumJson | ConvertFrom-Json
         $exist_ChangeNum = ($changeNumList | where-object{$_.ServiceTagName -eq $serviceTagName}).ChangeNum
         
-        if($newest_ChangeNum -eq $exist_ChangeNum) {
+        if(!$exist_ChangeNum) {
+            log -Message "기존 Service Tag의 ChangeNum를 찾을 수 없으므로 새로 등록을 시작합니다."
+            for ($f=0; $f -lt $ipNameTable.Count; $f++ ){
+                $jsonData = @{
+                    entry = @{
+                        "@name" = $ipNameTable[$f]
+                        "ip-netmask" = $newest_ServiceTag_IP_List[$f]
+                        "tag" = @{
+                            "member" = @($serviceTagName)
+                        }
+                    }
+                }
+                $jsonBody = $jsonData | ConvertTo-Json
+                $url = "${RESTAPI_address}?${FW_location}&name=$($ipNameTable[$f])"
+                $response = Invoke-WebRequest -header $header -Uri $url -Method PUT -Body $jsonBody -ContentType "application/json" -SkipCertificateCheck
+                log -Message "Address Name [$($ipNameTable[$f])], Address IP [$($newest_ServiceTag_IP_List[$f])] 업데이트하였습니다."
+            }
+        }
+
+        elseif($newest_ChangeNum -eq $exist_ChangeNum) {
             log -Message "기존 Service Tag의 ChangeNum = [$exist_ChangeNum]."
             log -Message "업데이트된 Azure Service Tag의 ChangeNum = [$newest_ChangeNum]."
             log -Message "ChangeNum이 동일하므로 업데이트할 내역이 없습니다."
