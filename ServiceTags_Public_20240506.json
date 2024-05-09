@@ -80230,7 +80230,7 @@
       "name": "HDInsight.KoreaCentral",
       "id": "HDInsight.KoreaCentral",
       "properties": {
-        "changeNumber": 4,
+        "changeNumber": 3,
         "region": "koreacentral",
         "regionId": 26,
         "platform": "Azure",
