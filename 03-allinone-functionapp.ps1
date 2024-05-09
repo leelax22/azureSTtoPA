@@ -65,16 +65,14 @@ function log {
 }
 
 #--------필요 변수 Import -----------------------------------------------------#
-## env.json에서 Import
-$envJsonString = Get-Content -Raw -Path "env.json"
-$envJsonObject = $envJsonString | ConvertFrom-Json
 
-${X_PAN_KEY} = $envJsonObject."X_PAN_KEY"
-${PALO_URL} = $envJsonObject."PALO_URL"
-$ServiceTagList = $envJsonObject."ServiceTagList"
-$GITHUB_USERNAME = $envJsonObject."GITHUB_USERNAME"
-$GITHUB_TOKEN = $envJsonObject."GITHUB_TOKEN"
-$REPO_NAME = $envJsonObject."REPO_NAME"
+## function app - application env variable에 등록한 항목 불러오기
+${X_PAN_KEY} = $env:X_PAN_KEY
+${PALO_URL} = $env:PALO_URL
+$ServiceTagList = $env:ServiceTagList
+$GITHUB_USERNAME = $env:GITHUB_USERNAME
+$GITHUB_TOKEN = $env:GITHUB_TOKEN
+$REPO_NAME = $env:REPO_NAME
 
 $header = @{
     "X-PAN-KEY"= "${X_PAN_KEY}"
@@ -419,7 +417,7 @@ for ($h=0; $h -lt $ServiceTagList.Count; $h++){
     log -Message "Service Tag [$($ServiceTagList[$h])]의 마지막 ChangeNum은 [$changeNum]입니다. 파일에 기록합니다."
 }
 
-$changeNumFileName = "ServiceTag_changeNum.json"
+$changeNumFileName = "ServiceTags_changeNum.json"
 $changeNumJson = $changeNumList | ConvertTo-Json
 $changeNumJson | Out-File -FilePath $changeNumFileName
 log -Message "Service Tag의 ChangeNum 업데이트 작업이 끝났습니다."

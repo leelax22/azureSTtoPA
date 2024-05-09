@@ -80,10 +80,10 @@ $header = @{
     "X-PAN-KEY"= "${X_PAN_KEY}"
 }
 
-$PaloRESTAPI_address_baseurl="$PALO_URL/restapi/v11.1/Objects/Addresses"
-$PaloRESTAPI_addressGroup_baseurl="$PALO_URL/restapi/v11.1/Objects/AddressGroups"
-$PaloRESTAPI_tag_baseurl="$PALO_URL/restapi/v11.1/Objects/Tags"
-$PaloLocationParamter="location=vsys&vsys=vsys1"
+$RESTAPI_address="$PALO_URL/restapi/v11.1/Objects/Addresses"
+$RESTAPI_addressGroup="$PALO_URL/restapi/v11.1/Objects/AddressGroups"
+$RESTAPI_tag="$PALO_URL/restapi/v11.1/Objects/Tags"
+$FW_location="location=vsys&vsys=vsys1"
 
 
 #--------필요 변수 지정 끝----------------------------------------------------#
@@ -147,11 +147,11 @@ for ($i=0; $i -lt $ServiceTagList.Count; $i++){
 
 # Paloalto에 등록된 IP 개수 확인
 ## IP List를 JSON으로 저장
-curl -X GET -H "X-PAN-KEY: ${X-PAN-KEY}" -k  "${PaloRESTAPI_address_baseurl}?${PaloLocationParamter}" > Palo_AddressList.json
+curl -X GET -H "X-PAN-KEY: ${X-PAN-KEY}" -k  "${RESTAPI_address}?${FW_location}" > Palo_AddressList.json
 
 
 # Address Group이 있는지 조회하고 없으면 생성
-curl -X GET -H "X-PAN-KEY: ${X-PAN-KEY}" -k  "${PaloRESTAPI_addressGroup_baseurl}?${PaloLocationParamter}" > Palo_AddressGroupList.json
+curl -X GET -H "X-PAN-KEY: ${X-PAN-KEY}" -k  "${RESTAPI_addressGroup}?${FW_location}" > Palo_AddressGroupList.json
 $exist_Palo_AddressGroup_List = jq -r '.result.entry[]."@name"' Palo_AddressGroupList.json
 for ($u=0; $u -lt $ServiceTagList.Count; $u++){
     $serviceTagName = $ServiceTagList[$u]
@@ -169,7 +169,7 @@ for ($u=0; $u -lt $ServiceTagList.Count; $u++){
         $jsonBody = $jsonData | ConvertTo-Json
     
         # 요청을 보낼 URL
-        $url = "${PaloRESTAPI_addressGroup_baseurl}?${PaloLocationParamter}&name=$serviceTagName"
+        $url = "${RESTAPI_addressGroup}?${FW_location}&name=$serviceTagName"
     
         # 요청 보내기
         $response = Invoke-WebRequest -header $header -Uri $url -Method Post -Body $jsonBody -ContentType "application/json" -SkipCertificateCheck -ErrorAction SilentlyContinue
@@ -181,7 +181,7 @@ for ($u=0; $u -lt $ServiceTagList.Count; $u++){
 }
 
 # 서비스 태그 리스트에서 조회하고 없으면 태그 생성
-curl -X GET -H "X-PAN-KEY: ${X-PAN-KEY}" -k  "${PaloRESTAPI_tag_baseurl}?${PaloLocationParamter}" > Palo_TagList.json
+curl -X GET -H "X-PAN-KEY: ${X-PAN-KEY}" -k  "${RESTAPI_tag}?${FW_location}" > Palo_TagList.json
 $exist_Palo_Tag_List = jq -r '.result.entry[]."@name"' Palo_TagList.json
 for ($o=0; $o -lt $ServiceTagList.Count; $o++){
     $serviceTagName = $ServiceTagList[$o]
@@ -196,7 +196,7 @@ for ($o=0; $o -lt $ServiceTagList.Count; $o++){
         $jsonBody = $jsonData | ConvertTo-Json
     
         # 요청을 보낼 URL
-        $url = "${PaloRESTAPI_tag_baseurl}?${PaloLocationParamter}&name=$serviceTagName"
+        $url = "${RESTAPI_tag}?${FW_location}&name=$serviceTagName"
     
         # 요청 보내기
         $response = Invoke-WebRequest -header $header -Uri $url -Method Post -Body $jsonBody -ContentType "application/json" -SkipCertificateCheck -ErrorAction SilentlyContinue
@@ -261,7 +261,7 @@ for ($r=0; $r -lt $ServiceTagList.Count; $r++){
                 }
             }
             $jsonBody = $jsonData | ConvertTo-Json
-            $url = "${PaloRESTAPI_address_baseurl}?${PaloLocationParamter}&name=$($ipNameTable[$k])"
+            $url = "${RESTAPI_address}?${FW_location}&name=$($ipNameTable[$k])"
             $response = Invoke-WebRequest -header $header -Uri $url -Method Post -Body $jsonBody -ContentType "application/json" -SkipCertificateCheck
             log -Message "Address Name [$($ipNameTable[$k])], Address IP [$($newest_ServiceTag_IP_List[$k])] 생성하였습니다."
         }
@@ -285,7 +285,7 @@ for ($r=0; $r -lt $ServiceTagList.Count; $r++){
             log -Message "삭제될 Address Name은 [$ipName]입니다."
         }
         for ($c=0; $c -lt $Delete_ipNameTable.Count; $c++ ){
-            $url = "${PaloRESTAPI_address_baseurl}?${PaloLocationParamter}&name=$($Delete_ipNameTable[$c])"
+            $url = "${RESTAPI_address}?${FW_location}&name=$($Delete_ipNameTable[$c])"
             $response = Invoke-WebRequest -header $header -Uri $url -Method DELETE -Body $jsonBody -ContentType "application/json" -SkipCertificateCheck
             log -Message "Address Name [$($Delete_ipNameTable[$c])]을 삭제하였습니다."
         }
@@ -301,7 +301,7 @@ for ($r=0; $r -lt $ServiceTagList.Count; $r++){
                 }
             }
             $jsonBody = $jsonData | ConvertTo-Json
-            $url = "${PaloRESTAPI_address_baseurl}?${PaloLocationParamter}&name=$($ipNameTable[$v])"
+            $url = "${RESTAPI_address}?${FW_location}&name=$($ipNameTable[$v])"
             $response = Invoke-WebRequest -header $header -Uri $url -Method PUT -Body $jsonBody -ContentType "application/json" -SkipCertificateCheck
             log -Message "Address Name [$($ipNameTable[$v])], Address IP [$($newest_ServiceTag_IP_List[$v])] 업데이트하였습니다."
         }
@@ -336,7 +336,7 @@ for ($r=0; $r -lt $ServiceTagList.Count; $r++){
                 }
             }
             $jsonBody = $jsonData | ConvertTo-Json
-            $url = "${PaloRESTAPI_address_baseurl}?${PaloLocationParamter}&name=$($Add_ipNameTable[$x])"
+            $url = "${RESTAPI_address}?${FW_location}&name=$($Add_ipNameTable[$x])"
             $response = Invoke-WebRequest -header $header -Uri $url -Method POST -Body $jsonBody -ContentType "application/json" -SkipCertificateCheck
             log -Message "Address Name [$($Add_ipNameTable[$x])]을 생성하였습니다."
         }
@@ -352,7 +352,7 @@ for ($r=0; $r -lt $ServiceTagList.Count; $r++){
                 }
             }
             $jsonBody = $jsonData | ConvertTo-Json
-            $url = "${PaloRESTAPI_address_baseurl}?${PaloLocationParamter}&name=$($ipNameTable[$y])"
+            $url = "${RESTAPI_address}?${FW_location}&name=$($ipNameTable[$y])"
             $response = Invoke-WebRequest -header $header -Uri $url -Method PUT -Body $jsonBody -ContentType "application/json" -SkipCertificateCheck
             log -Message "Address Name [$($ipNameTable[$y])], Address IP [$($newest_ServiceTag_IP_List[$y])] 업데이트하였습니다."
         }
@@ -397,7 +397,7 @@ for ($r=0; $r -lt $ServiceTagList.Count; $r++){
                     }
                 }
                 $jsonBody = $jsonData | ConvertTo-Json
-                $url = "${PaloRESTAPI_address_baseurl}?${PaloLocationParamter}&name=$($ipNameTable[$f])"
+                $url = "${RESTAPI_address}?${FW_location}&name=$($ipNameTable[$f])"
                 $response = Invoke-WebRequest -header $header -Uri $url -Method PUT -Body $jsonBody -ContentType "application/json" -SkipCertificateCheck
                 log -Message "Address Name [$($ipNameTable[$f])], Address IP [$($newest_ServiceTag_IP_List[$f])] 업데이트하였습니다."
             }
@@ -419,7 +419,7 @@ for ($h=0; $h -lt $ServiceTagList.Count; $h++){
     log -Message "Service Tag [$($ServiceTagList[$h])]의 마지막 ChangeNum은 [$changeNum]입니다. 파일에 기록합니다."
 }
 
-$changeNumFileName = "ServiceTag_changeNum.json"
+$changeNumFileName = "ServiceTags_changeNum.json"
 $changeNumJson = $changeNumList | ConvertTo-Json
 $changeNumJson | Out-File -FilePath $changeNumFileName
 log -Message "Service Tag의 ChangeNum 업데이트 작업이 끝났습니다."
