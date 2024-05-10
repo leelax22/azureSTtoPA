@@ -1,1 +1,1 @@
-{"@status":"success","@code":"19","result":{"@total-count":"4","@count":"4","entry":[{"@name":"Storage.KoreaCentral","@location":"vsys","@vsys":"vsys1"},{"@name":"HDInsight.KoreaCentral","@location":"vsys","@vsys":"vsys1"},{"@name":"AzureContainerRegistry.KoreaSouth","@location":"vsys","@vsys":"vsys1"},{"@name":"MicrosoftContainerRegistry.EastUS","@location":"vsys","@vsys":"vsys1"}]}}
+{"code":16,"message":"Not Authenticated","details":[{"@type":"CauseInfo","causes":[{"code":1,"module":"panui_auth","description":"Not Authenticated"}]}]}

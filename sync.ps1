@@ -76,6 +76,9 @@ $GITHUB_USERNAME = $envJsonObject."GITHUB_USERNAME"
 $GITHUB_TOKEN = $envJsonObject."GITHUB_TOKEN"
 $REPO_NAME = $envJsonObject."REPO_NAME"
 
+$checkMode = 0 # Service Tag Update 날짜 확인만 하고 동일했을 때 중지시키려면 1로 설정 (불필요하게 방화벽 설정까지 확인하지 않도록)
+
+
 $header = @{
     "X-PAN-KEY"= "${X_PAN_KEY}"
 }
@@ -110,7 +113,7 @@ $json_update_date=([regex]::Matches($json_filename, '\d+')).value
 # 이미 해당 날짜의 JSON이 있다면 스크립트 중지. 이미 최신 버전임.
 if ( (test-path $json_filename) ) {
     log -Message "해당 날짜의 Service Tag JSON파일 [$json_filename]이 이미 존재합니다. 다운로드하지 않습니다."
-    # break -> Function App에서 지속적으로 검사할 것이면 break 넣고 수동으로 업데이트하려면 break 제거
+    if ($checkMode -eq 1) {break}
 }
 
 # 해당 날짜의 JSON이 없다면 새로 다운로드, 정제를 위해 고정된 이름으로 복사
@@ -132,7 +135,7 @@ New-Item -ItemType Directory -Path $json_update_date -ErrorAction SilentlyContin
 
 # json에서 필요한 Service Tag의 IP들만 파일로 출력
 for ($i=0; $i -lt $ServiceTagList.Count; $i++){
-    log -Message "$($ServiceTagList[$i]) IPs를 텍스트 파일에 저장합니다."
+    log -Message "$($ServiceTagList[$i]) 의 IP들을 텍스트 파일에 저장합니다."
     $ipList = (jq -r --arg servicetag "$($ServiceTagList[$i])" '.values[]|select(.name == $servicetag)|.properties.addressPrefixes[]?' ServiceTags_Public.json)
     Remove-Item -Path "$json_update_date/$($ServiceTagList[$i]).txt" -ErrorAction SilentlyContinue
     New-Item -ItemType File -Path "$json_update_date/$($ServiceTagList[$i]).txt" -ErrorAction SilentlyContinue
