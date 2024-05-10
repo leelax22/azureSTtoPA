@@ -433,6 +433,7 @@ for ($r=0; $r -lt $ServiceTagList.Count; $r++){
 
 
 # 작업 종료 후 마지막 ChangeNum 저장
+$changeNumFileName = "ServiceTags_changeNum.json"
 log -Message "Service Tag의 ChangeNum을 [$changeNumFileName]에 저장합니다. "
 $changeNumList = @()
 for ($h=0; $h -lt $ServiceTagList.Count; $h++){
@@ -441,7 +442,6 @@ for ($h=0; $h -lt $ServiceTagList.Count; $h++){
     log -Message "Service Tag [$($ServiceTagList[$h])]의 마지막 ChangeNum은 [$changeNum]입니다. 파일에 기록합니다."
 }
 
-$changeNumFileName = "ServiceTags_changeNum.json"
 $changeNumJson = $changeNumList | ConvertTo-Json
 $changeNumJson | Out-File -FilePath $changeNumFileName
 log -Message "Service Tag의 ChangeNum 업데이트 작업이 끝났습니다."

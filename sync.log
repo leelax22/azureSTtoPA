@@ -118,3 +118,63 @@
 2024-05-10T10:25:51+09 [Information] - /home/leelax/script/sync_AzureServcieTag_to_Paloalto/20240506 의 날짜는 3달 안이므로 유지합니다.
 2024-05-10T10:25:51+09 [Information] - /home/leelax/script/sync_AzureServcieTag_to_Paloalto/ServiceTags_Public_20240506.json 의 날짜는 3달 안이므로 유지합니다.
 2024-05-10T10:25:51+09 [Information] - Github 저장와 동기화를 시작합니다.
+2024-05-10T10:25:53+09 [Information] - git 동기화가 완료되었습니다.
+2024-05-10T10:25:54+09 [Information] - 방화벽 Commit가 완료되었습니다.
+2024-05-10T10:26:33+09 [Information] - ------------------------------------------------------------------
+2024-05-10T10:26:33+09 [Information] - ------------------------------------------------------------------
+2024-05-10T10:26:33+09 [Information] - 　　　　　　　　　New Sync Job Started......　　　　　　　　　　　　　　　
+2024-05-10T10:26:33+09 [Information] - ------------------------------------------------------------------
+2024-05-10T10:26:33+09 [Information] - ------------------------------------------------------------------
+2024-05-10T10:26:34+09 [Information] - 해당 날짜의 Service Tag JSON파일 [ServiceTags_Public_20240506.json]이 이미 존재합니다. 다운로드하지 않습니다.
+2024-05-10T10:26:34+09 [Information] - Storage.KoreaSouth 의 IP들을 텍스트 파일에 저장합니다.
+2024-05-10T10:26:34+09 [Information] - HDInsight.KoreaCentral 의 IP들을 텍스트 파일에 저장합니다.
+2024-05-10T10:26:34+09 [Information] - ActionGroup.KoreaSouth 의 IP들을 텍스트 파일에 저장합니다.
+2024-05-10T10:26:35+09 [Information] - 방화벽에 새로운 Address Group [Storage.KoreaSouth] 을 등록하였습니다.
+2024-05-10T10:26:35+09 [Information] - 방화벽에 새로운 Address Group [HDInsight.KoreaCentral] 을 등록하였습니다.
+2024-05-10T10:26:36+09 [Information] - 방화벽에 새로운 Address Group [ActionGroup.KoreaSouth] 을 등록하였습니다.
+2024-05-10T10:26:36+09 [Information] - 방화벽에 새로운 태그 [Storage.KoreaSouth] 을 등록하였습니다.
+2024-05-10T10:26:37+09 [Information] - 방화벽에 새로운 태그 [HDInsight.KoreaCentral] 을 등록하였습니다.
+2024-05-10T10:26:37+09 [Information] - 방화벽에 새로운 태그 [ActionGroup.KoreaSouth] 을 등록하였습니다.
+2024-05-10T10:26:37+09 [Information] - 방화벽에 Service Tag [Storage.KoreaSouth]에 대한 동기화 작업을 시작합니다.
+2024-05-10T10:26:37+09 [Information] - 해당 Service Tag로 방화벽에 등록된 IP 개수가 0개 입니다.
+2024-05-10T10:26:37+09 [Information] - 방화벽에 등록할 Address IP는 총 14개 입니다.
+2024-05-10T10:26:37+09 [Information] - Address Name [Storage.KoreaSouth001], Address IP [20.47.47.0/24] 생성하였습니다.
+2024-05-10T10:26:38+09 [Information] - Address Name [Storage.KoreaSouth002], Address IP [20.60.45.0/24] 생성하였습니다.
+2024-05-10T10:26:38+09 [Information] - Address Name [Storage.KoreaSouth003], Address IP [20.60.202.0/23] 생성하였습니다.
+2024-05-10T10:26:38+09 [Information] - Address Name [Storage.KoreaSouth004], Address IP [20.150.14.0/23] 생성하였습니다.
+2024-05-10T10:26:39+09 [Information] - Address Name [Storage.KoreaSouth005], Address IP [20.157.137.0/24] 생성하였습니다.
+2024-05-10T10:26:39+09 [Information] - Address Name [Storage.KoreaSouth006], Address IP [52.231.168.64/27] 생성하였습니다.
+2024-05-10T10:26:39+09 [Information] - Address Name [Storage.KoreaSouth007], Address IP [52.231.168.112/28] 생성하였습니다.
+2024-05-10T10:26:40+09 [Information] - Address Name [Storage.KoreaSouth008], Address IP [52.231.168.128/28] 생성하였습니다.
+2024-05-10T10:26:40+09 [Information] - Address Name [Storage.KoreaSouth009], Address IP [52.231.208.16/28] 생성하였습니다.
+2024-05-10T10:26:41+09 [Information] - Address Name [Storage.KoreaSouth010], Address IP [52.231.208.32/28] 생성하였습니다.
+2024-05-10T10:26:41+09 [Information] - Address Name [Storage.KoreaSouth011], Address IP [52.239.165.0/26] 생성하였습니다.
+2024-05-10T10:26:41+09 [Information] - Address Name [Storage.KoreaSouth012], Address IP [52.239.165.160/27] 생성하였습니다.
+2024-05-10T10:26:42+09 [Information] - Address Name [Storage.KoreaSouth013], Address IP [52.239.190.192/26] 생성하였습니다.
+2024-05-10T10:26:42+09 [Information] - Address Name [Storage.KoreaSouth014], Address IP [52.239.204.0/24] 생성하였습니다.
+2024-05-10T10:26:42+09 [Information] - ------------------------------------------------------------------
+2024-05-10T10:26:42+09 [Information] - 방화벽에 Service Tag [HDInsight.KoreaCentral]에 대한 동기화 작업을 시작합니다.
+2024-05-10T10:26:42+09 [Information] - 해당 Service Tag로 방화벽에 등록된 IP 개수가 0개 입니다.
+2024-05-10T10:26:42+09 [Information] - 방화벽에 등록할 Address IP는 총 4개 입니다.
+2024-05-10T10:26:42+09 [Information] - Address Name [HDInsight.KoreaCentral001], Address IP [20.41.69.32/29] 생성하였습니다.
+2024-05-10T10:26:43+09 [Information] - Address Name [HDInsight.KoreaCentral002], Address IP [20.44.26.240/29] 생성하였습니다.
+2024-05-10T10:26:43+09 [Information] - Address Name [HDInsight.KoreaCentral003], Address IP [52.231.36.209/32] 생성하였습니다.
+2024-05-10T10:26:43+09 [Information] - Address Name [HDInsight.KoreaCentral004], Address IP [52.231.39.142/32] 생성하였습니다.
+2024-05-10T10:26:43+09 [Information] - ------------------------------------------------------------------
+2024-05-10T10:26:43+09 [Information] - 방화벽에 Service Tag [ActionGroup.KoreaSouth]에 대한 동기화 작업을 시작합니다.
+2024-05-10T10:26:44+09 [Information] - 해당 Service Tag로 방화벽에 등록된 IP 개수가 0개 입니다.
+2024-05-10T10:26:44+09 [Information] - 방화벽에 등록할 Address IP는 총 2개 입니다.
+2024-05-10T10:26:44+09 [Information] - Address Name [ActionGroup.KoreaSouth001], Address IP [4.243.28.116/30] 생성하였습니다.
+2024-05-10T10:26:45+09 [Information] - Address Name [ActionGroup.KoreaSouth002], Address IP [52.147.98.52/30] 생성하였습니다.
+2024-05-10T10:26:45+09 [Information] - ------------------------------------------------------------------
+2024-05-10T10:26:45+09 [Information] - Service Tag의 ChangeNum을 [ServiceTags_changeNum.json]에 저장합니다. 
+2024-05-10T10:26:45+09 [Information] - Service Tag [Storage.KoreaSouth]의 마지막 ChangeNum은 [6]입니다. 파일에 기록합니다.
+2024-05-10T10:26:45+09 [Information] - Service Tag [HDInsight.KoreaCentral]의 마지막 ChangeNum은 [4]입니다. 파일에 기록합니다.
+2024-05-10T10:26:45+09 [Information] - Service Tag [ActionGroup.KoreaSouth]의 마지막 ChangeNum은 [2]입니다. 파일에 기록합니다.
+2024-05-10T10:26:45+09 [Information] - Service Tag의 ChangeNum 업데이트 작업이 끝났습니다.
+2024-05-10T10:26:45+09 [Information] - Service Tag의 Sync 작업이 종료되었습니다.
+2024-05-10T10:26:45+09 [Information] - ------------------------------------------------------------------
+2024-05-10T10:26:45+09 [Information] - 3달 이상 지난 Service Tag 파일과 폴더 삭제를 시작합니다. 
+2024-05-10T10:26:45+09 [Information] - /home/leelax/script/sync_AzureServcieTag_to_Paloalto/20240506 의 날짜는 3달 안이므로 유지합니다.
+2024-05-10T10:26:45+09 [Information] - /home/leelax/script/sync_AzureServcieTag_to_Paloalto/ServiceTags_Public_20240506.json 의 날짜는 3달 안이므로 유지합니다.
+2024-05-10T10:26:45+09 [Information] - Github 저장와 동기화를 시작합니다.
