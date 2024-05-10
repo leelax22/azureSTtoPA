@@ -148,13 +148,8 @@ for ($i=0; $i -lt $ServiceTagList.Count; $i++){
 
 #------------------------------------------------------------------------------#
 
-# Paloalto에 등록된 IP 개수 확인
-## IP List를 JSON으로 저장
-curl -X GET -H "X-PAN-KEY: ${X-PAN-KEY}" -k  "${RESTAPI_address}?${FW_location}" > Palo_AddressList.json
-
-
 # Address Group이 있는지 조회하고 없으면 생성
-curl -X GET -H "X-PAN-KEY: ${X-PAN-KEY}" -k  "${RESTAPI_addressGroup}?${FW_location}" > Palo_AddressGroupList.json
+curl -X GET -H "X-PAN-KEY: ${X_PAN_KEY}" -k  "${RESTAPI_addressGroup}?${FW_location}" > Palo_AddressGroupList.json
 $exist_Palo_AddressGroup_List = jq -r '.result.entry[]."@name"' Palo_AddressGroupList.json
 for ($u=0; $u -lt $ServiceTagList.Count; $u++){
     $serviceTagName = $ServiceTagList[$u]
@@ -184,7 +179,7 @@ for ($u=0; $u -lt $ServiceTagList.Count; $u++){
 }
 
 # 서비스 태그 리스트에서 조회하고 없으면 태그 생성
-curl -X GET -H "X-PAN-KEY: ${X-PAN-KEY}" -k  "${RESTAPI_tag}?${FW_location}" > Palo_TagList.json
+curl -X GET -H "X-PAN-KEY: ${X_PAN_KEY}" -k  "${RESTAPI_tag}?${FW_location}" > Palo_TagList.json
 $exist_Palo_Tag_List = jq -r '.result.entry[]."@name"' Palo_TagList.json
 for ($o=0; $o -lt $ServiceTagList.Count; $o++){
     $serviceTagName = $ServiceTagList[$o]
@@ -212,6 +207,9 @@ for ($o=0; $o -lt $ServiceTagList.Count; $o++){
 
 
 # 각 서비스 태그 IP 동기화
+# Paloalto에 등록된 IP 개수 확인
+## IP List를 JSON으로 저장
+curl -X GET -H "X-PAN-KEY: ${X_PAN_KEY}" -k  "${RESTAPI_address}?${FW_location}" > Palo_AddressList.json
 
 for ($r=0; $r -lt $ServiceTagList.Count; $r++){
     $serviceTagName = $ServiceTagList[$r]
@@ -505,7 +503,7 @@ catch {
 }
 
 try {
-    $commit = (curl -X POST -H "X-PAN-KEY: ${X-PAN-KEY}" -k "https://lcmpalopayg.koreacentral.cloudapp.azure.com/api?type=commit&cmd=<commit></commit>")
+    $commit = (curl -X POST -H "X-PAN-KEY: ${X_PAN_KEY}" -k "https://lcmpalopayg.koreacentral.cloudapp.azure.com/api?type=commit&cmd=<commit></commit>")
     log -Message "방화벽 Commit가 완료되었습니다."
 }
 catch {

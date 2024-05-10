@@ -1,14 +1,10 @@
 [
   {
-    "ChangeNum": "6",
-    "ServiceTagName": "Storage.KoreaSouth"
+    "ChangeNum": "5",
+    "ServiceTagName": "ActionGroup.JapanEast"
   },
   {
-    "ChangeNum": "4",
-    "ServiceTagName": "HDInsight.KoreaCentral"
-  },
-  {
-    "ChangeNum": "2",
-    "ServiceTagName": "ActionGroup.KoreaSouth"
+    "ChangeNum": "3",
+    "ServiceTagName": "AzureDataExplorerManagement.JapanWest"
   }
 ]

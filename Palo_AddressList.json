@@ -1,1 +1,1 @@
-{"code":16,"message":"Not Authenticated","details":[{"@type":"CauseInfo","causes":[{"code":1,"module":"panui_auth","description":"Not Authenticated"}]}]}
+{"@status":"success","@code":"7","result":{"@total-count":"0","@count":"0"}}
