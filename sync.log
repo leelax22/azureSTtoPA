@@ -33,3 +33,45 @@
 2024-05-10T10:42:11+09 [Information] - /home/leelax/script/sync_AzureServcieTag_to_Paloalto/20240506 의 날짜는 3달 안이므로 유지합니다.
 2024-05-10T10:42:11+09 [Information] - /home/leelax/script/sync_AzureServcieTag_to_Paloalto/ServiceTags_Public_20240506.json 의 날짜는 3달 안이므로 유지합니다.
 2024-05-10T10:42:11+09 [Information] - Github 저장와 동기화를 시작합니다.
+2024-05-10T10:42:13+09 [Information] - git 동기화가 완료되었습니다.
+2024-05-10T10:42:14+09 [Information] - 방화벽 Commit가 완료되었습니다.
+2024-05-10T10:44:15+09 [Information] - ------------------------------------------------------------------
+2024-05-10T10:44:15+09 [Information] - ------------------------------------------------------------------
+2024-05-10T10:44:15+09 [Information] - 　　　　　　　　　New Sync Job Started......　　　　　　　　　　　　　　　
+2024-05-10T10:44:15+09 [Information] - ------------------------------------------------------------------
+2024-05-10T10:44:15+09 [Information] - ------------------------------------------------------------------
+2024-05-10T10:44:15+09 [Information] - 해당 날짜의 Service Tag JSON파일 [ServiceTags_Public_20240506.json]이 이미 존재합니다. 다운로드하지 않습니다.
+2024-05-10T10:44:15+09 [Information] - ActionGroup.JapanEast 의 IP들을 텍스트 파일에 저장합니다.
+2024-05-10T10:44:15+09 [Information] - AzureDataExplorerManagement.JapanWest 의 IP들을 텍스트 파일에 저장합니다.
+2024-05-10T10:44:16+09 [Information] - 방화벽에 Address Group [ActionGroup.JapanEast] 이 등록되어 있습니다.
+2024-05-10T10:44:16+09 [Information] - 방화벽에 Address Group [AzureDataExplorerManagement.JapanWest] 이 등록되어 있습니다.
+2024-05-10T10:44:16+09 [Information] - 방화벽에 태그 [ActionGroup.JapanEast] 가 등록되어 있습니다.
+2024-05-10T10:44:16+09 [Information] - 방화벽에 태그 [AzureDataExplorerManagement.JapanWest] 가 등록되어 있습니다.
+2024-05-10T10:44:16+09 [Information] - 방화벽에 Service Tag [ActionGroup.JapanEast]에 대한 동기화 작업을 시작합니다.
+2024-05-10T10:44:17+09 [Information] - 해당 Service Tag로 방화벽에 등록된 IP 개수는 [3]개 입니다.
+2024-05-10T10:44:17+09 [Information] - 해당 Service Tag로 Azure에서 지정된 IP 개수는 [3]개 입니다.
+2024-05-10T10:44:17+09 [Information] - 방화벽에 등록된 IP 개수와 Azure에서 지정된 IP 개수가 일치합니다.
+2024-05-10T10:44:17+09 [Information] - 기존 Service Tag의 ChangeNum과 새로 업데이트된 Azure Service Tag의 ChangeNum을 비교합니다.
+2024-05-10T10:44:17+09 [Information] - 기존 Service Tag의 ChangeNum = [5].
+2024-05-10T10:44:17+09 [Information] - 업데이트된 Azure Service Tag의 ChangeNum = [5].
+2024-05-10T10:44:17+09 [Information] - ChangeNum이 동일하므로 업데이트할 내역이 없습니다.
+2024-05-10T10:44:17+09 [Information] - ------------------------------------------------------------------
+2024-05-10T10:44:17+09 [Information] - 방화벽에 Service Tag [AzureDataExplorerManagement.JapanWest]에 대한 동기화 작업을 시작합니다.
+2024-05-10T10:44:17+09 [Information] - 해당 Service Tag로 방화벽에 등록된 IP 개수는 [3]개 입니다.
+2024-05-10T10:44:17+09 [Information] - 해당 Service Tag로 Azure에서 지정된 IP 개수는 [3]개 입니다.
+2024-05-10T10:44:17+09 [Information] - 방화벽에 등록된 IP 개수와 Azure에서 지정된 IP 개수가 일치합니다.
+2024-05-10T10:44:17+09 [Information] - 기존 Service Tag의 ChangeNum과 새로 업데이트된 Azure Service Tag의 ChangeNum을 비교합니다.
+2024-05-10T10:44:17+09 [Information] - 기존 Service Tag의 ChangeNum = [3].
+2024-05-10T10:44:17+09 [Information] - 업데이트된 Azure Service Tag의 ChangeNum = [3].
+2024-05-10T10:44:17+09 [Information] - ChangeNum이 동일하므로 업데이트할 내역이 없습니다.
+2024-05-10T10:44:17+09 [Information] - ------------------------------------------------------------------
+2024-05-10T10:44:17+09 [Information] - Service Tag의 ChangeNum을 [ServiceTags_changeNum.json]에 저장합니다. 
+2024-05-10T10:44:17+09 [Information] - Service Tag [ActionGroup.JapanEast]의 마지막 ChangeNum은 [5]입니다. 파일에 기록합니다.
+2024-05-10T10:44:17+09 [Information] - Service Tag [AzureDataExplorerManagement.JapanWest]의 마지막 ChangeNum은 [3]입니다. 파일에 기록합니다.
+2024-05-10T10:44:17+09 [Information] - Service Tag의 ChangeNum 업데이트 작업이 끝났습니다.
+2024-05-10T10:44:17+09 [Information] - Service Tag의 Sync 작업이 종료되었습니다.
+2024-05-10T10:44:17+09 [Information] - ------------------------------------------------------------------
+2024-05-10T10:44:17+09 [Information] - 3달 이상 지난 Service Tag 파일과 폴더 삭제를 시작합니다. 
+2024-05-10T10:44:17+09 [Information] - /home/leelax/script/sync_AzureServcieTag_to_Paloalto/20240506 의 날짜는 3달 안이므로 유지합니다.
+2024-05-10T10:44:17+09 [Information] - /home/leelax/script/sync_AzureServcieTag_to_Paloalto/ServiceTags_Public_20240506.json 의 날짜는 3달 안이므로 유지합니다.
+2024-05-10T10:44:17+09 [Information] - Github 저장와 동기화를 시작합니다.

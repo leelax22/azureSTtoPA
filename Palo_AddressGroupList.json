@@ -1,1 +1,1 @@
-{"@status":"success","@code":"7","result":{"@total-count":"0","@count":"0"}}
+{"@status":"success","@code":"19","result":{"@total-count":"2","@count":"2","entry":[{"@name":"ActionGroup.JapanEast","@location":"vsys","@vsys":"vsys1","dynamic":{"filter":"ActionGroup.JapanEast"}},{"@name":"AzureDataExplorerManagement.JapanWest","@location":"vsys","@vsys":"vsys1","dynamic":{"filter":"AzureDataExplorerManagement.JapanWest"}}]}}
